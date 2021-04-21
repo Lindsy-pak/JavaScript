@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1; // 변수 선언
+        num1 = 10; // 초기화(최초 값넣는 것 초기값설정)
+        console.log(num1);
+        num1 = '안녕하세요';
+        console.log(num1);
+        num1 = 101.1;
+        console.log(num1);
+        num1 = true;
+        console.log(num1);
+        //남성은 175.5cm 여성 163.2cm
+        var gender = '남';
+        var height = 178;
+
+        console.log(gender == '남');
+        console.log(gender === '남');
+        console.log('--------');
+        console.log(height == '178');
+        console.log(height === '178');
+        /// === 은 타입도 같아야 true, ==는 값만 같으면 true , ===이 true면 ==은 무조건 true
+
+        var val_1 = '10';
+        var val_2 = 5; 
+        // +빼고는 String 과 int도 연산이 된다. 
+        console.log('--------');
+        //console.log(val_1 +  val_2);
+        console.log(parseInt(val_1) + val_2); // 형변환
+        console.log(Number(val_1) + val_2); // 형변환 
+
+        console.log(val_1 * val_2);
+        console.log(val_1 - val_2);
+        console.log(val_1 / val_2);
+        console.log(val_1 % val_2);
+
+        var val_3 = 7;
+        var val_4 = 9;
+
+        console.log(val_3 + val_4);
+        console.log('' + val_3 + val_4);
+        console.log(String(val_3) + val_4);
+
+        var result1 = 10 > 5;
+        console.log(result1);
+        if(1) {
+            console.log('0은 true다');
+        }
+
+        if(0) {
+            console.log('0은 true다');
+        } else {
+            console.log('0은 false다')
+        }
+
+        if(-2) {
+            console.log('-2는 true다')
+        }
+        if('') {
+            console.log("''는 true");
+        } else {
+            console.log("''는 false다")
+        }
+
+        if('a') {
+            console.log("'a'은 true다");
+        }
+
+        // boolean - true은 true, false는 false
+        // 숫자 0은 false, 나머지 true
+        // 문자열 빈칸은 false, 나머지 true
+        // 객체, 배열 true
+        // undefined, null은 false
+        // undefined는 값이 할당된 적이 없다. 
+        // null은 주소값이 없다. 
+
+        var num;
+        console.log(num);
+        num = null;
+        console.log(num);
+        console.log('--------');
+
+        var result = 10 && 12 && 17;
+        console.log(result); // 17
+        
+        result = 0 || 10 || 12; // 0이므녀 10 1이면 1 앞에서부터 true를 찾는다. 
+        console.log(result); // 10
+
+        var a = '';
+        var b = '안녕';
+
+        var result2  = a || b;
+        console.log(result2);
+        console.log(a || b);
+
+        //body안에 script넣어야 퍼포먼스가 좋다
+
+        //싱글라인 주석
+        /*
+        멀티라인 주석
+        멀티라인 주석
+        멀티라인 주석
+        */
+        /*
+        console.log('안녕!-1');
+        console.log('안녕!-2');
+        document.write('<div>하하하1</div>');
+        document.write('<br>하하하2<br>');
+        alert('하하하3');
+        alert('하하하4');
+       */
+      
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name: '홍길동', // 멤버필드
+            age: 30,
+            run: function() {
+                console.log('%s이(가) 달린다.', this.name);
+            }
+        }; 
+        // 객체화 : 객체 생성할 수 있음 자바에서는 객체화 된거만 사용할 수있지만 함수 자체가 객체이기 때문에 더 쉽다.
+        console.log(obj); 
+        obj.name = '하니';
+        obj.run();
+        obj.run = 10; // 형변환이 자동으로 된다. 정수형은로 바뀐다. 
+        console.log('run : ' + obj.run);
+
+        // 함수 선언 1
+        var sum = function(n1, n2) {
+            return n1+ n2;
+        }
+        // 함수 선언 2
+        function sum2(n1, n2) {
+            return n1 + n2;
+        }
+
+        console.log(sum(10,20));
+        console.log(sum2(10,20));
+
+        
+        
+
+
+
+
+    </script>
+</body>
+</html>

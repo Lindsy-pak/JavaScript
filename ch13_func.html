@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(n1) {
+            console.log(n1+n2);
+        }
+        sum(10,30); // 인자 값을 하나만 받기로 했는데 2개 받아도 실행이 된다. 
+
+        function sum(n1) {
+            console.log(n1);
+        }
+        sum(); // 값을 주지않아도 찍히지만, undefined
+        function sum(n1) {
+            if(n1 == undefined) {
+                n1 = 10;
+            }
+            console.log(n1);
+        }
+        function sum(n1 = 10) {
+            console.log(n1); // es6 문법 값을 보내지 않으면 10을 보낸다. 
+        }
+        sum();
+        console.log('-----------');
+
+        function sumAll() {
+            var sum = 0;
+            for(var i=0; i<arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log('sum : ' + sum);
+        }
+
+        function sumAll2(...args) {
+            var sum = 0;
+            for(var i=0; i<args.length; i++) {
+                sum += args[i];
+            }
+            console.log('sum : ' + sum);
+        }
+
+        sumAll(1); //1
+        sumAll(1,5); //6
+        sumAll(1,5,7); //13
+        sumAll(1,5,7,10); //23
+
+        setTimeout(function() {
+            console.log('안녕');
+            val = 100;
+            console.log('val2 : ' + val);
+        }, 3000);
+
+        setTimeout(function() {
+            console.log('헬로');
+        }, 1000);
+
+        console.log('------------'); //콜백지옥 : 동시에 실행하지않고 순서대로 실행되도록 하기 위함 !! 
+
+        setTimeout(function() {
+            console.log('1');
+
+            setTimeout(function() {
+                console.log('2');
+
+                setTimeout(function() {
+                console.log('3');
+                }, 1000);
+
+            }, 3000);
+
+        }, 5000);
+
+        console.log('------------'); //-----------------------------------------------------------
+
+        var hello = function hello() {
+            console.log('hello');
+        }
+        setTimeout(hello, 1000) // 1초 후에 hello 호출, 자주 사용 하지 않음 콜백 함수를 이해하기 위해서 사용 
+
+        setTimeout(function() { // 1초 후에 hello메서드(함수) 호출
+            console.log('hello');
+        }, 1000); 
+        
+
+
+    </script>
+</body>
+</html>

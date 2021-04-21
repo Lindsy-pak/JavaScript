@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = {
+            0: 10,
+            1: 20,
+            2: 30,
+            3: 40,
+            length: 4,
+            forEach: function(fn) {
+                for(var i=0; i<this.length; i++) {
+                    fn(this[i]);
+                }
+            }
+        };
+        // console.log(arr[0]);
+        // console.log(arr[1]);
+        // console.log(arr[2]);
+        // console.log(arr[3]);
+
+        function print(item) {
+            console.log('item : ' + item);
+        }
+        arr.forEach(print);
+        //자바에서 반복문 포이치와 비슷한 개념인데 콜백 함수를 할 때 포이치로 쓴다. 
+
+    </script>
+</body>
+</html>

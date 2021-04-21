@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr2 = [10,20,30,40];
+
+        var result = arr2.map(function(item) {
+            return item>30? item*2 : item;
+        });
+
+        // var result = arr2.map(function(item) {
+        //     if(item>30) {
+        //         return item*2;
+        //     }
+        //     return item;
+        // });
+
+        function myMap(item) {
+            return item - 2;
+        }
+        var result2 = arr2.map(myMap);
+
+        console.log('result : ' + result);
+        console.log('result2 : ' + result2);
+        //5,15,25,45,55,65
+
+        var result3 = arr2.map(function(item) {
+            if(item >= 30) {
+                return item - 5;
+            }
+            return item + 5;
+        });
+        console.log('result3 : ' + result3);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

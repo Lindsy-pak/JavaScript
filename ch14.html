@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        // 스크립트 특징/ 비동기 방식 : 가장 먼저 끝나는 게 먼저 실행이 된다. 순서대로 출력 되지 x
+        // 콜백 함수를 자꾸 안으로 파고들기 때문에 불편 그점을 해결하기 위해 promise사용 
+        // promise는 무조건 리턴한다. -> 주소값을 리턴 
+        //promise는 함수 resolve는 에러해결하는 함수 reject는 에러가 났을 때 사용하는 함수
+        
+        /*
+        var fn = function(resolve, reject) {
+            // 오래걸리는 작업 ! 
+            if() { //작업이 잘 완료 됐다면
+                resolve();
+            } else {
+                reject(); //작업이 에러가 있다면 
+            }
+        }
+        */
+
+        // var prom = new Promise(fn);
+
+        var pro1 = new Promise(function(resolve, reject) { 
+            setTimeout(function() {
+                resolve(100);
+            }, 5000);
+        });
+
+        var pro2 = new Promise(function(resolve) { 
+            setTimeout(function() {
+                resolve(2); // resolve 일때는 then(연관), reject는 catch -> 이런 개념을 chain의 개념 
+            }, 3000);
+        });
+
+        pro1.then(function(item) { // promise는 무조건 .then을 사용한다. 
+            // 위에서 100을 받기 위해 then을 사용한다. 
+            console.log('pro1 : ' + item);
+        }).catch(function(err) { // err났을 때 : reject
+            console.log('err : ' + err);
+        }).then(function() { // 인자값을 넣지 않는다. 
+            // 닫는거
+            // Stream (빨대)
+            console.log(result);
+        });
+
+        pro2.then(function(res) {
+            console.log('pro2 : ' + res);
+        })
+
+
+        
+
+
+
+    </script>
+</body>
+</html>

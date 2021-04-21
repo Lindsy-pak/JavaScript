@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    console.log('foo ok');
+                }, 3000);
+            });
+        }
+
+        function bar() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    console.log('bar ok');
+                    resolve();
+                }, 2000);
+            });
+        }
+
+        function baz() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    console.log('bazzzzzzzz ok');
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        //await, async
+        async function run() { // await를 사용하기 위해 async가 무조건 있어야함 
+            await foo(); // promise를 기다리라고 하는 명령어 
+            await bar();
+            baz();
+        }
+        run();
+
+
+        // 동기 : 순차적으로 명령을 실행하는 방법
+        // 비동기 : 
+        // 보통 프로그램은 동기 방식이지만 위에서 setTimeout은 비동기 방식의 메서드이다. 
+        // ajax : 인스타그램이나 페이스북에서 사용하며 프로그램언어나 프레임 워크가 아닌 구동 방법중 하나이다.
+        // 페이지를 어떤 동작없이 자동으로 로딩해주는 방법
+        // 비동기 방식으로하게 되면 오류가 날 가능성이 많기 때문에 promise를 사용하여 오류를 최소화 한다.  
+
+    </script>
+</body>
+</html>

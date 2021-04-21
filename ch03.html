@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 오버로딩이 되지 않는다. 기존 함수가 날라가고 뒤에 함수가 실행된다. 
+        function sum (n1, n2) {
+            return n1 + n2;
+        }
+        function sum2 (n1, n2) {
+            console.log('sum2 : %d', n1 + n2); // return 하지 않고 바로 하는 방법 
+        }
+
+        var result = sum(10, 20); //sum에서 return 받은 값 
+        console.log('%s = %d', 'result', result);
+
+        var ddd;
+        if(sum(10,20)) {
+            console.log(ddd);
+        }
+
+        sum2(11, 22); // 파라미터에서 바로 받은 값 : sum2
+        result = sum2(11,22);
+
+        console.log(result); // undefined
+        console.log('%s = %d', 'result', result); // NaN
+
+        // NaN : 
+
+    </script>
+</body>
+</html>
